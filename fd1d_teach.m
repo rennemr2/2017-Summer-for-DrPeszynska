@@ -7,12 +7,12 @@ function fd1d (M,a,b,ua,ub)
 %% the finite difference approximation of a model 
 %% two-point boundary value problem -u''=f
 %% user must code expression for f (rhsfun)
-%% and set up /change boundary conditions 
+%% and set-up/change boundary conditions 
 %% default discretization is 0....M, with M a parameter
 %% but since MATLAB can't number vectors from 0, we use 1..M+1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% M. Peszynska, 03/2005
-%% © Copyright Department of Mathematics, Oregon State University
+%% Â© Copyright Department of Mathematics, Oregon State University
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if nargin < 1, 
     M = 10; 
