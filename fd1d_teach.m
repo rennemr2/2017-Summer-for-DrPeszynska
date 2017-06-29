@@ -1,7 +1,4 @@
 function fd1d (M,a,b,ua,ub)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%       FD1D
-%%       for MTH 453/553
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% This function shows how to set up the finite difference approximation of a 
 %% model two-point boundary value problem -u''=f, on the interval [a,b], with 
