@@ -14,7 +14,8 @@ function fd1d (M,a,b,ua,ub)
 %% 3) The user must code the expression for the exact solution below (exfun).
 
 
-    %% >>> Question to MP: What do you mean by this?  It seems these are inputs ua and ub?
+%% >>> Question to MP: What do you mean by this?  
+%% >>> It seems that the boundary conditions are the inputs ua and ub?
 %% and set up /change boundary conditions 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
