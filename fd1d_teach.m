@@ -2,18 +2,29 @@ function fd1d (M,a,b,ua,ub)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       FD1D
 %%       for MTH 453/553
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% This function shows how to set up 
-%% the finite difference approximation of a model 
-%% two-point boundary value problem -u''=f
-%% user must code expression for f (rhsfun)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This function shows how to set up the finite difference approximation of a 
+%% model two-point boundary value problem -u''=f, on the interval [a,b], with 
+%% Dirichlet boundary conditions ua (left) and ub (right), and default 
+%% discretization 0....M.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Notes:
+%% 1) Since MATLAB vectors aren't 0-indexed, we use 1..M+1 to label the nodes.
+%% 2) The user must code the expression for f below (rhsfun).
+%% 3) The user must code the expression for the exact solution below (exfun).
+
+
+    %% >>> Question to MP: What do you mean by this?  It seems these are inputs ua and ub?
 %% and set up /change boundary conditions 
-%% default discretization is 0....M, with M a parameter
-%% but since MATLAB can't number vectors from 0, we use 1..M+1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Outputs:
+%% This function will output a plot of both the exact solution and the 
+%% numerical solution, along with reporting the max-norm error between the two.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% M. Peszynska, 03/2005
-%% © Copyright Department of Mathematics, Oregon State University
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Â© Copyright Department of Mathematics, Oregon State University
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if nargin < 1, 
     M = 10; 
     a = 0; b = 1;
@@ -53,14 +64,13 @@ plot(x,exvec,'k',x,u','r*');
 %% compute the error vector
 error = abs(exvec - u);
 %% report the error in max norm and in two discrete norm 
-fprintf('%g    %g\n',dx,norm(error,inf));
+fprintf('%g    %g\n',dx,norm(error,inf));   %% >>> Question to MP: I don't see the two-norm here?  Am I mis-understanding?
 
-%%%%%%%%%%%%%%%%%%%%%%%% these functions have to be coded by user
-function v = rhsfun(x)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% these functions have to be coded by user %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function v = rhsfun(x)  %% this is the function f from the equation -u''=f
 v = pi*pi*sin(pi*x);
 
-function v = exfun(x)
+function v = exfun(x)   %%this is the exact solution for instructive comparison
 v = sin(pi*x);
-
-        
-    
