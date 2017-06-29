@@ -1,8 +1,13 @@
 function [maxerr] = fd1d_heat (M,a,b,ua,ub,T,dt)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% finite difference approximation of a simple 
-%% parabolic two-point boundary value problem u_t-u_{xx} = f
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This function finds the finite difference approximation of a simple parabolic
+%% two-point boundary value problem u_t-u_{xx} = f on the one-dimensional 
+%% spatial interval [a,b], with Dirichlet boundary conditions ua (left) and 
+%% ub (right), and default discretization 0....M, and on the time interval [0,T]
+%% with time step of size dt. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% M. Peszynska,  2005/4
 %% Copyright Department of Mathematics, Oregon State University
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
